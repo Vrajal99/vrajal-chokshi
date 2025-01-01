@@ -60,7 +60,7 @@ const Data = () => {
         I'm software Engineer based in San Francisco, and I'm very passionate
         and dedicated to my work.
       </p>
-      <a href="" className="button button--flex">
+      <a href="#contact" className="button button--flex">
         Say Hello!
         <svg
           className="button__icon"
