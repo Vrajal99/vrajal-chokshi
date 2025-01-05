@@ -9,12 +9,18 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm("service_uokrjrd", "template_qvboiiw", form.current, {
-      /*Remember to add Private KEY and necessary code for authentication and bad input*/
-      limitRate: { id: "app", throttle: 10000 },
-      publicKey: "H9CCPPfrVRBtjP0mx",
-      blockHeadless: True,
-    });
+    emailjs.sendForm(
+      "service_uokrjrd",
+      "template_qvboiiw",
+      form.current,
+      {
+        /*Remember to add Private KEY and necessary code for authentication and bad input*/
+        limitRate: { id: "app", throttle: 10000 },
+        publicKey: "H9CCPPfrVRBtjP0mx",
+        blockHeadless: "True",
+      },
+      window.alert("Message Sent")
+    );
     e.target.reset();
   };
 
@@ -108,7 +114,7 @@ const Contact = () => {
             </div>
 
             <button href="#contact" className="button button--flex">
-              Say Message
+              Send Message
               <svg
                 className="button__icon"
                 xmlns="http://www.w3.org/2000/svg"
