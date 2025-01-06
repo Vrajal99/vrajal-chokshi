@@ -41,7 +41,7 @@ const Footer = () => {
             <i className="bx bxl-github"></i>
           </a>
           <a
-            href="https://www.instagram.com/"
+            href="https://www.instagram.com/that.vrajalchokshi/"
             className="footer__social-link"
             target="_blank"
           >

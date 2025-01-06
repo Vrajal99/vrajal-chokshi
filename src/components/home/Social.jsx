@@ -18,7 +18,7 @@ const Social = () => {
         <i className="uil uil-github-alt"></i>
       </a>
       <a
-        href="https://www.instagram.com/"
+        href="https://www.instagram.com/that.vrajalchokshi/"
         className="home__social-icon"
         target="_blank"
       >

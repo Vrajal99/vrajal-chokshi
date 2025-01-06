@@ -8,16 +8,18 @@ const Backend = () => {
       <div className="skills__box">
         <div className="skills__group">
           <div className="skills__data">
-            <i className="bx bx-badge-check"></i>
+            <i className="bx bxl-python"></i>
+            {/* <i className="bx bx-badge-check"></i> */}
 
             <div>
-              <h3 className="skills__name">C#</h3>
+              <h3 className="skills__name">Python</h3>
               <span className="skills__level">Intermediate</span>
             </div>
           </div>
 
           <div className="skills__data">
-            <i className="bx bx-badge-check"></i>
+            <i className="bx bxl-nodejs"></i>
+            {/* <i className="bx bx-badge-check"></i> */}
 
             <div>
               <h3 className="skills__name">Node JS</h3>
@@ -26,10 +28,11 @@ const Backend = () => {
           </div>
 
           <div className="skills__data">
-            <i className="bx bx-badge-check"></i>
+            <i className="bx bx-code-curly"></i>
+            {/* <i className="bx bx-badge-check"></i> */}
 
             <div>
-              <h3 className="skills__name">Python</h3>
+              <h3 className="skills__name">C#</h3>
               <span className="skills__level">Intermediate</span>
             </div>
           </div>
@@ -37,16 +40,18 @@ const Backend = () => {
 
         <div className="skills__group">
           <div className="skills__data">
-            <i className="bx bx-badge-check"></i>
+            <i className="bx bxl-postgresql"></i>
+            {/* <i className="bx bx-badge-check"></i> */}
 
             <div>
-              <h3 className="skills__name">MySQL</h3>
+              <h3 className="skills__name">PostgreSQL</h3>
               <span className="skills__level">Intermediate</span>
             </div>
           </div>
 
           <div className="skills__data">
-            <i className="bx bx-badge-check"></i>
+            <i className="bx bxl-firebase"></i>
+            {/* <i className="bx bx-badge-check"></i> */}
 
             <div>
               <h3 className="skills__name">Firebase</h3>
@@ -54,7 +59,8 @@ const Backend = () => {
             </div>
           </div>
           <div className="skills__data">
-            <i className="bx bx-badge-check"></i>
+            <i className="bx bx-code"></i>
+            {/* <i className="bx bx-badge-check"></i> */}
 
             <div>
               <h3 className="skills__name">SQL</h3>
