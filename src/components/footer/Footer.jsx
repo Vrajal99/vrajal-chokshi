@@ -27,14 +27,14 @@ const Footer = () => {
         </ul>
         <div className="footer__social">
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/vrajal-chokshi"
             className="footer__social-link"
             target="_blank"
           >
             <i className="bx bxl-linkedin"></i>
           </a>
           <a
-            href="https://github.com/"
+            href="https://github.com/Vrajal99"
             className="footer__social-link"
             target="_blank"
           >
@@ -49,7 +49,7 @@ const Footer = () => {
           </a>
         </div>
         <span className="footer__copy">
-          &#169;Vrajal Kaushalkumar Chokshi. All rights reserved
+          &#169;Vrajal Chokshi. All rights reserved
         </span>
       </div>
     </footer>

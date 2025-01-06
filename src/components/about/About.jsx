@@ -4,6 +4,8 @@ import AboutImg from "../../assets/about.jpg";
 import CV from "../../assets/John-Cv.pdf";
 import Info from "./Info";
 const About = () => {
+  const resumeLink = "https://drive.google.com/uc?export=download&id=";
+  const resumeID = "1-CKqy_nzuQ5bNrVGV43MPlleZhxJBMwn";
   return (
     <section className="about section" id="about">
       <h2 className="section__title">About Me</h2>
@@ -18,7 +20,11 @@ const About = () => {
             projects carried out.
           </p>
 
-          <a download="" href={CV} className="button button--flex">
+          <a
+            download=""
+            href={resumeLink + resumeID}
+            className="button button--flex"
+          >
             Download CV
             <svg
               className="button__icon"

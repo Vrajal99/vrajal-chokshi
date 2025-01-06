@@ -40,12 +40,14 @@ const Works = () => {
           );
         })}
       </div>
+      <span className="section__subtitle">See you in a bit here...</span>
+      {/* Check back soon for updates */}
 
-      <div className="work__container container grid">
+      {/* <div className="work__container container grid">
         {projects.map((item) => {
           return <WorkItems item={item} key={item.id} />;
         })}
-      </div>
+      </div> */}
     </div>
   );
 };
