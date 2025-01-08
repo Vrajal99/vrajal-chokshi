@@ -2,7 +2,7 @@
   "homepage": "https://Vrajal99.github.io/vrajal-react-portfolio/",
   "name": "portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
