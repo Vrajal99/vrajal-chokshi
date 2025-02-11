@@ -1,9 +1,9 @@
 import React from "react";
 
-const Backend = () => {
+const Database = () => {
   return (
     <div className="skills__content">
-      <h3 className="skills__title">Backend</h3>
+      <h3 className="skills__title">Database</h3>
 
       <div className="skills__box">
         <div className="skills__group">
@@ -11,7 +11,7 @@ const Backend = () => {
             <i className="bx bx-badge-check"></i>
 
             <div>
-              <h3 className="skills__name">Python</h3>
+              <h3 className="skills__name">PostgreSQL</h3>
               <span className="skills__level">Intermediate</span>
             </div>
           </div>
@@ -19,48 +19,44 @@ const Backend = () => {
             <i className="bx bx-badge-check"></i>
 
             <div>
-              <h3 className="skills__name">Python</h3>
+              <h3 className="skills__name">MySQL</h3>
               <span className="skills__level">Intermediate</span>
             </div>
           </div>
 
           <div className="skills__data">
-            <i className="bx bxl-nodejs"></i>
-            {/* <i className="bx bx-badge-check"></i> */}
+            <i className="bx bx-badge-check"></i>
 
             <div>
-              <h3 className="skills__name">Node JS</h3>
-              <span className="skills__level">Basic</span>
+              <h3 className="skills__name">SQL Server</h3>
+              <span className="skills__level">Intermediate</span>
             </div>
           </div>
         </div>
 
         <div className="skills__group">
           <div className="skills__data">
-            <i className="bx bxl-postgresql"></i>
-            {/* <i className="bx bx-badge-check"></i> */}
+            <i className="bx bx-badge-check"></i>
 
             <div>
-              <h3 className="skills__name">Java</h3>
+              <h3 className="skills__name">MongoDB</h3>
               <span className="skills__level">Intermediate</span>
             </div>
           </div>
 
           <div className="skills__data">
-            <i className="bx bxl-firebase"></i>
-            {/* <i className="bx bx-badge-check"></i> */}
+            <i className="bx bx-badge-check"></i>
 
             <div>
-              <h3 className="skills__name">Flask</h3>
+              <h3 className="skills__name">DynamoDB</h3>
               <span className="skills__level">Basic</span>
             </div>
           </div>
           <div className="skills__data">
-            <i className="bx bx-code"></i>
-            {/* <i className="bx bx-badge-check"></i> */}
+            <i className="bx bx-badge-check"></i>
 
             <div>
-              <h3 className="skills__name">REST</h3>
+              <h3 className="skills__name">Oracle</h3>
               <span className="skills__level">Intermediate</span>
             </div>
           </div>
@@ -70,4 +66,4 @@ const Backend = () => {
   );
 };
 
-export default Backend;
+export default Database;
