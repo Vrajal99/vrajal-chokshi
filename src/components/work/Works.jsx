@@ -40,8 +40,7 @@ const Works = () => {
           );
         })}
       </div>
-      <span className="section__subtitle">See you in a bit here...</span>
-      {/* Check back soon for updates */}
+      <span className="section__subtitle">Updating Soon ...</span>
 
       {/* <div className="work__container container grid">
         {projects.map((item) => {
