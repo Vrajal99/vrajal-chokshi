@@ -36,20 +36,23 @@ A personal portfolio website built using **React** and **Vite**, showcasing web 
 ├── package.json           # Project metadata and dependencies
 ├── vite.config.js         # Vite configuration for bundling and development server
 ```
+
 ## How to Get Started
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/Vrajal99/vrajal-react-portfolio.git
+   git clone https://github.com/Vrajal99/vrajal-chokshi.git
+   ```
 2. **Navigate into the project folder:**
    ```bash
    cd vrajal-react-portfolio
+   ```
 3. **Install the required dependencies:**
    ```bash
    npm install
+   ```
 4. **Start the development server:**
    ```bash
    npm run dev
+   ```
 5. Open your browser and go to [http://localhost:5173](http://localhost:5173) to view the portfolio.
-
-
