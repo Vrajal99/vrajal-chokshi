@@ -8,23 +8,34 @@ const Qualification = () => {
   };
 
   return (
-    <section className="qualification section">
+    <section className="qualification section" id="qualification">
       <h2 className="section__title">Qualification</h2>
-      <span className="section__subtitle">My personnel journey</span>
+      <span className="section__subtitle">My personal journey</span>
 
       <div className="qualification__container container">
-        <div className="qualification__tabs">
-          <div
+        <div className="qualification__tabs" role="tablist" aria-label="Qualification tabs">
+          <button
+            type="button"
+            role="tab"
+            aria-selected={toggleState === 1}
+            aria-controls="education-tab"
+            id="education-button"
             className={
               toggleState === 1
                 ? "qualification__button qualification__active button--flex"
                 : "qualification__button button--flex"
             }
             onClick={() => toggleTab(1)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleTab(1);
+              }
+            }}
           >
             <i className="uil uil-graduation-cap qualification__icon"></i>
             Education
-          </div>
+          </button>
 
           <div
             className={
@@ -41,11 +52,15 @@ const Qualification = () => {
 
         <div className="qualification__sections">
           <div
+            role="tabpanel"
+            id="education-tab"
+            aria-labelledby="education-button"
             className={
               toggleState === 1
                 ? "qualification__content qualification__content-active"
                 : "qualification__content"
             }
+            hidden={toggleState !== 1}
           >
             <div className="qualification__data">
               <div>

@@ -10,10 +10,12 @@ import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
 import ScrollUp from "./components/scrollup/ScrollUp";
 import Work from "./components/work/Work";
+import DarkMode from "./components/darkmode/DarkMode";
+import { ThemeProvider } from "./context/ThemeContext";
 
 const App = () => {
   return (
-    <>
+    <ThemeProvider>
       <Header />
       <main className="main">
         <Home />
@@ -28,7 +30,8 @@ const App = () => {
 
       <Footer />
       <ScrollUp />
-    </>
+      <DarkMode />
+    </ThemeProvider>
   );
 };
 

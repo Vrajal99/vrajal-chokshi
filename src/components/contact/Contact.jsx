@@ -1,31 +1,73 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 import "./contact.css";
 
 const Contact = () => {
   const form = useRef();
+  const [status, setStatus] = useState({
+    loading: false,
+    error: null,
+    success: false
+  });
 
-  const sendEmail = (e) => {
+  const validateForm = (formData) => {
+    const errors = {};
+    if (!formData.get('name').trim()) {
+      errors.name = 'Name is required';
+    }
+    if (!formData.get('email').trim()) {
+      errors.email = 'Email is required';
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.get('email'))) {
+      errors.email = 'Invalid email address';
+    }
+    if (!formData.get('project').trim()) {
+      errors.project = 'Project description is required';
+    }
+    return errors;
+  };
+
+  const sendEmail = async (e) => {
     e.preventDefault();
+    setStatus({ loading: true, error: null, success: false });
 
-    emailjs.sendForm(
-      "service_uokrjrd",
-      "template_qvboiiw",
-      form.current,
-      {
-        /*Remember to add Private KEY and necessary code for authentication and bad input*/
-        limitRate: { id: "app", throttle: 10000 },
-        publicKey: "H9CCPPfrVRBtjP0mx",
-        blockHeadless: "True",
-      },
-      window.alert("Message Sent")
-    );
-    e.target.reset();
+    const formData = new FormData(form.current);
+    const errors = validateForm(formData);
+
+    if (Object.keys(errors).length > 0) {
+      setStatus({
+        loading: false,
+        error: 'Please fill in all required fields correctly',
+        success: false
+      });
+      return;
+    }
+
+    try {
+      await emailjs.sendForm(
+        "service_uokrjrd",
+        "template_qvboiiw",
+        form.current,
+        {
+          limitRate: { id: "app", throttle: 10000 },
+          publicKey: "H9CCPPfrVRBtjP0mx",
+          blockHeadless: "True",
+        }
+      );
+      setStatus({ loading: false, error: null, success: true });
+      e.target.reset();
+      setTimeout(() => setStatus(prev => ({ ...prev, success: false })), 5000);
+    } catch (error) {
+      setStatus({
+        loading: false,
+        error: 'Failed to send message. Please try again.',
+        success: false
+      });
+    }
   };
 
   return (
-    <section className="contact section" id="contact">
+    <section className="contact section" id="contact" aria-label="Contact form">
       <h2 className="section__title">Get in touch</h2>
       <span className="section__subtitle">Contact Me</span>
 
@@ -85,40 +127,93 @@ const Contact = () => {
         <div className="contact__content">
           <h3 className="contact__title">Write me your project</h3>
 
-          <form ref={form} onSubmit={sendEmail} className="contact__form">
+          <form 
+          ref={form} 
+          onSubmit={sendEmail} 
+          className="contact__form"
+          aria-label="Contact form"
+          noValidate
+        >
             <div className="contact__form-div">
-              <label className="contact__form-tag">Name</label>
+              <label className="contact__form-tag">
+                Name <span className="required">*</span>
+              </label>
               <input
                 type="text"
                 name="name"
+                id="name"
                 className="contact__form-input"
                 placeholder="Insert your name"
+                required
+                aria-required="true"
+                aria-invalid={form.current?.name?.validity?.valid === false}
+                aria-describedby="name-error"
               />
+              <div id="name-error" className="sr-only" role="alert">
+                {form.current?.name?.validity?.valid === false && 'Please enter your name'}
+              </div>
             </div>
 
             <div className="contact__form-div">
-              <label className="contact__form-tag">Mail</label>
+              <label className="contact__form-tag">
+                Mail <span className="required">*</span>
+              </label>
               <input
                 type="email"
                 name="email"
+                id="email"
                 className="contact__form-input"
                 placeholder="Insert your email"
+                required
+                aria-required="true"
+                aria-invalid={form.current?.email?.validity?.valid === false}
+                aria-describedby="email-error"
               />
+              <div id="email-error" className="sr-only" role="alert">
+                {form.current?.email?.validity?.valid === false && 'Please enter a valid email'}
+              </div>
             </div>
 
             <div className="contact__form-div contact__form-area">
-              <label className="contact__form-tag">Project</label>
+              <label className="contact__form-tag">
+                Project <span className="required">*</span>
+              </label>
               <textarea
                 name="project"
+                id="project"
                 cols="30"
                 rows="10"
                 className="contact__form-input"
                 placeholder="Write your project"
+                required
+                aria-required="true"
+                aria-invalid={form.current?.project?.validity?.valid === false}
+                aria-describedby="project-error"
               ></textarea>
+              <div id="project-error" className="sr-only" role="alert">
+                {form.current?.project?.validity?.valid === false && 'Please enter your project'}
+              </div>
             </div>
 
-            <button href="#contact" className="button button--flex">
-              Send Message
+            {status.error && (
+              <div className="contact__form-error" role="alert">
+                {status.error}
+              </div>
+            )}
+
+            {status.success && (
+              <div className="contact__form-success" role="alert">
+                Message sent successfully!
+              </div>
+            )}
+
+            <button 
+              type="submit" 
+              className="button button--flex"
+              aria-label="Send message"
+              disabled={status.loading}
+            >
+              {status.loading ? 'Sending...' : 'Send Message'}
               <svg
                 className="button__icon"
                 xmlns="http://www.w3.org/2000/svg"
