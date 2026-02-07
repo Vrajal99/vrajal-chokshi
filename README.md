@@ -1,6 +1,10 @@
-# Vrajal React Portfolio
+# Vrajal Chokshi - Portfolio
 
-A personal portfolio website built using **React** and **Vite**, showcasing web development skills and projects with a focus on performance, responsiveness, and clean code practices.
+A professional portfolio website showcasing full-stack web development expertise, built with modern technologies and best practices for performance, accessibility, and maintainability.
+
+## Overview
+
+This portfolio demonstrates proficiency in front-end development with a focus on creating responsive, scalable, and user-centric web applications. The project highlights experience with contemporary development tools and industry-standard practices.
 
 ## Features
 
